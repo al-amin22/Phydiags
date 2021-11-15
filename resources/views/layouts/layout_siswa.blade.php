@@ -46,22 +46,20 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" >
             
-
-
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-university"></i>
+                    
                 </div>
-                <div class="sidebar-brand-text mx-3"> Jambi University</div>
+                <div class="sidebar-brand-text mx-3">Universitas Jambi</div>
             </a>
 
              <center>
             @if( Siswa::where('user_id', Auth::user()->id )->first() != null )
                 <li class="app-sidebar__heading">
-                <img src="{{ url('images/' . $siswa->foto) }}" class="rounded-circle" style="width: 50px; height: 50px; display: block; margin: auto;" alt="{{ $siswa->foto }}">
+                <img src="{{ url('images/' . $siswa->foto) }}" class="rounded-circle" style="width: 100px; height: 100px; display: block; margin: auto;" alt="{{ $siswa->foto }}">
                 </li>
             @else
             <li class="app-sidebar__heading"> <img style="width: 100px; height: 100px; display: block; margin: auto;" class="rounded-circle" src="{{asset('assets/images/1.png')}}" alt=""></li>
@@ -234,7 +232,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Pilih "Logout" Jika Anda Ingin Keluar.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="login.html">Logout</a>

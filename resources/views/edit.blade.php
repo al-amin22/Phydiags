@@ -2,7 +2,7 @@
 
 @section('title')
     <title>PhyDiags | Education</title>
-@endsection
+
 
 @section('content')
 

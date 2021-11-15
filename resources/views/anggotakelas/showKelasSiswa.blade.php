@@ -84,7 +84,7 @@
                                         <tr>
                                             <th scope="col" style="width:50px">No</th>
                                             <th scope="col" >Nama Ujian </th>
-                                            <th scope="col" >Tanggal Ujian </th>
+                                            <th scope="col" >Deskrispsi Ujian </th>
                                             <th scope="col" >Opsi</th>
                                         </tr>
                                     </thead>
@@ -95,7 +95,7 @@
                                             <td scope="row" class="text-center"><?php echo $i; $i++; ?></td>
                                             <?php $i++; ?>
                                             <td >{{$item->ujian->nama_ujian}}</td>
-                                            <td class="text-center"> {{date("d-m-Y",strtotime($item->ujian->waktu_mulai))}} </td>
+                                            <td class="text-center"> {{$item->ujian->deskripsi}} </td>
                                             
                                             <td class="text-center">
                                                 <a href="{{route('hasilUjian',$item->id)}}">

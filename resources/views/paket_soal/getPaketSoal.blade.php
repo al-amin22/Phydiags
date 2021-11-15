@@ -104,4 +104,11 @@
   });
 
 </script>
+   <script type="text/javascript" src="{{asset('assets/scripts/main.js')}}"></script>
+    <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @yield('linkfooter')
+</body>
+@yield('js')
+@yield('chart')
 @endsection

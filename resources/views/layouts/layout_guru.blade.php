@@ -100,16 +100,16 @@ face: "Times New Roman";
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background: green;">
             
 
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-university"></i>
+                   
                 </div>
-                <div class="sidebar-brand-text mx-3"> Jambi University</div>
+                <div class="sidebar-brand-text mx-3">Universitas Jambi</div>
             </a>
 
             <center>
@@ -120,7 +120,7 @@ face: "Times New Roman";
             @else
             <li class="app-sidebar__heading"> <img style="width: 50px; height: 50px; display: block; margin: auto;" class="rounded-circle" src="{{asset('assets/images/1.png')}}" alt=""></li>
             @endif
-            <li class="app-sidebar__heading">{{auth()->user()->name}}</li>
+            <li class="app-sidebar__heading" style="color: white;">{{auth()->user()->name}}</li>
 
                 <a  id="a-ku" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <button type="button" class="btn" style="color:white;">
@@ -348,10 +348,9 @@ face: "Times New Roman";
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                        
                     </div>
+                <div class="app-main__inner">
+                    @yield('content')
                 </div>
-                    <!-- Content Row -->
-                   @yield('content')
-    <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -362,10 +361,10 @@ face: "Times New Roman";
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Pilih "Logout" Jika Anda Ingin Keluar</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="/">Logout</a>
                 </div>
             </div>
         </div>

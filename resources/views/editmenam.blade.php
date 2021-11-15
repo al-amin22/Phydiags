@@ -9,7 +9,7 @@
 
 
 
-<form action="{{route('updatemlima', $editreduksimlima->id)}}"  method="post">
+<form action="{{route('updatemenam', $editreduksimenam->id)}}"  method="post">
   @csrf
   @method('PATCH')
  

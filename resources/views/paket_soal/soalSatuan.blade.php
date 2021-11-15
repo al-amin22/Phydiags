@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="alert alert-success" style="background: #456bd8; color: white;"> <h5><strong>Paket Soal : {{$paket_soal->nama_paket_soal}}</strong></h5> </div>
+            <div class="alert alert-success" style="background: #456bd8; color: white;"> <h5><strong style="color: white;">Paket Soal : {{$paket_soal->nama_paket_soal}}</strong></h5> </div>
         </div>
     </div>
     <div class="row justify-content-center mb-3">
@@ -90,4 +90,18 @@
         });
     });
 </script>
+   <script type="text/javascript" src="{{asset('assets/scripts/main.js')}}"></script>
+    <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @yield('linkfooter')
+</body>
+@yield('js')
+@yield('chart')
 @endsection
+   <script type="text/javascript" src="{{asset('assets/scripts/main.js')}}"></script>
+    <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @yield('linkfooter')
+</body>
+@yield('js')
+@yield('chart')
