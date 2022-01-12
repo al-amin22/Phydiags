@@ -10,13 +10,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="alert alert-success" style="background: #456bd8;" > <h5><strong>Paket Soal : {{$soal_satuan->paket_soal->nama_paket_soal}}</strong></h5> </div>
+            <div class="alert alert-success" style="background: #11101c;" > <h5><strong>Paket Soal : {{$soal_satuan->paket_soal->nama_paket_soal}}</strong></h5> </div>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header" style=" background: #456bd8;
+                <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 12px;">Soal No. </div>
@@ -77,7 +77,7 @@
                                     data-pil_d_tk1_update="{{ $soal_tk1->pil_d }}"
                                     data-gambar_tk1_update="{{ $soal_tk1->gambar }}"
                                     data-kunci_tk1_update="{{ $soal_tk1->kunci }}"
-                                    title="Edit" style="box-shadow: 3px 2px 5px grey; background: #456bd8;"><i class="fa fa-edit mr-2" ></i>Edit</button>
+                                    title="Edit" style="box-shadow: 3px 2px 5px grey; background: #11101c;"><i class="fa fa-edit mr-2" ></i>Edit</button>
                                 </div>
                             </div>
                         @else
@@ -158,7 +158,7 @@
                                     data-pil_a_tk2_update="{{ $soal_tk2->pil_a }}"
                                     data-pil_b_tk2_update="{{ $soal_tk2->pil_b }}"
                                     data-kunci_tk2_update="{{ $soal_tk2->kunci }}"
-                                    title="Edit" style="box-shadow: 3px 2px 5px grey; background: #456bd8;"><i class="fa fa-edit mr-2" ></i>Edit</button>
+                                    title="Edit" style="box-shadow: 3px 2px 5px grey; background: #11101c;"><i class="fa fa-edit mr-2" ></i>Edit</button>
                                 </div>
                             </div>
                         @else
@@ -196,7 +196,7 @@
                                         <input type="text" name="pil_b" id="pil_b" class="form-control" value="Tidak Yakin" placeholder="Tidak Yakin" >
                                     </div>
                                 </div>
-                                <div class="row"><div class="col-md-12 text-right"><button type="submit" class="btn btn-info" style="box-shadow: 3px 2px 5px grey; background: #456bd8;">Simpan</button></div></div>
+                                <div class="row"><div class="col-md-12 text-right"><button type="submit" class="btn btn-info" style="box-shadow: 3px 2px 5px grey; background: #11101c;">Simpan</button></div></div>
                             </form>
                         @endif
 
@@ -221,7 +221,7 @@
                                     data-pil_d_tk3_update="{{ $soal_tk3->pil_d }}"
                                     data-gambar_tk3_update="{{ $soal_tk3->gambar }}"
                                     data-kunci_tk3_update="{{ $soal_tk3->kunci }}"
-                                    title="Edit" style="box-shadow: 3px 2px 5px grey; background: #456bd8;"><i class="fa fa-edit mr-2"  ></i>Edit</button>
+                                    title="Edit" style="box-shadow: 3px 2px 5px grey; background: #11101c;"><i class="fa fa-edit mr-2"  ></i>Edit</button>
                                 </div>
                             </div>
                         @else
@@ -279,7 +279,7 @@
                                         <input type="text" name="pil_d" id="pil_d"  class="form-control" >
                                     </div>
                                 </div>
-                                <div class="row"><div class="col-md-12 text-right"><button type="submit" class="btn btn-info" style="box-shadow: 3px 2px 5px grey; background: #456bd8;">Simpan</button></div></div>
+                                <div class="row"><div class="col-md-12 text-right"><button type="submit" class="btn btn-info" style="box-shadow: 3px 2px 5px grey; background: #11101c;">Simpan</button></div></div>
 
                             </form>
                         @endif
@@ -302,7 +302,7 @@
                                     data-pil_a_tk4_update="{{ $soal_tk4->pil_a }}"
                                     data-pil_b_tk4_update="{{ $soal_tk4->pil_b }}"
                                     data-kunci_tk4_update="{{ $soal_tk4->kunci }}"
-                                    title="Edit" style="box-shadow: 3px 2px 5px grey; background: #456bd8;"><i class="fa fa-edit mr-2" ></i>Edit</button>
+                                    title="Edit" style="box-shadow: 3px 2px 5px grey; background: #11101c;"><i class="fa fa-edit mr-2" ></i>Edit</button>
                                 </div>
                             </div>
                         @else
@@ -340,7 +340,7 @@
                                         <input type="text" name="pil_b" id="pil_b"  class="form-control" value="Tidak Yakin"  placeholder="Tidak Yakin" >
                                     </div>
                                 </div>
-                                <div class="row"><div class="col-md-12 text-right"><button type="submit" class="btn btn-info" style="background: #456bd8;">Simpan</button></div></div>
+                                <div class="row"><div class="col-md-12 text-right"><button type="submit" class="btn btn-info" style="background: #11101c;">Simpan</button></div></div>
                             </form>
                         @endif
 

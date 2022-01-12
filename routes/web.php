@@ -212,7 +212,8 @@ Route::group(['middleware' => ['auth','checkRole:1'],'prefix'=>'guru'], function
         Route::get('/{id}','UjianController@showUjian')->name('showUjian');
         Route::patch('/update','UjianController@updateUjian')->name('updateUjian');
         Route::get('/delete/{id}','UjianController@deleteUjian')->name('deleteUjian');
-        Route::get('/hasil/persiswa/{id}','UjianController@showHasilUjianPersiswa')->name('showHasilUjianPersiswa');
+        Route::get('/hasil/persiswa/{anggota_kelas_id}/{ujian_id}','UjianController@showHasilUjianPersiswa', ['$anggota_kelas_id' =>'anggota_kelas_id','$ujian_id' =>'ujian_id'])->name('showHasilUjianPersiswa');
+        Route::get('/hasil/persiswa/{id}','UjianController@showHasilUjianPerTest')->name('showHasilUjianPerTest');
         Route::get('/hasil/persoal/{ujian_id}/{id}/{nomor}','UjianController@showHasilUjianPersoal', ['$id'=>'id','$ujian_id' =>'ujian_id'])->name('showHasilUjianPersoal');
         Route::get('/{id}/miskonsepsi/{miskonsepsi_id}','UjianController@detailMiskonsepsi')->name('detailMiskonsepsi');
     });
@@ -252,7 +253,7 @@ Route::group(['middleware' => ['auth','checkRole:2'],'prefix'=>'siswa'], functio
     });
     Route::group(['prefix' => 'ujian'], function () {
         Route::get('/','UjianController@getUjianSiswa')->name('getUjianSiswa');
-        Route::get('/UpdateUjian/{id}','UjianController@UpdateUjianSiswa')->name('UpdateUjianSiswa');
+        Route::get('/UjianUlang/{id}','UjianController@UjianUlangSiswa')->name('UjianUlangSiswa');
         Route::get('/room/{id}','UjianController@runUjian')->name('runUjian');
         Route::get('/finish/{id}','UjianController@finishUjian')->name('finishUjian');
     });

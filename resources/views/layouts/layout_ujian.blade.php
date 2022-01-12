@@ -18,7 +18,7 @@
     <script defer src="https://unpkg.com/ziggy-js@0.9.x/dist/js/route.min.js"></script>
     @yield('linkhead')
     <style>
-    body {background: linear-gradient(180deg, #12C3CE 0%, #D7E8E9 100% ) no-repeat center  fixed;}
+    body {background: linear-gradient(180deg, #12C3CE 0%, #11101c 100% ) no-repeat center  fixed;}
     .card{
         box-shadow: 2px 2px 10px rgba(48, 10, 64, 0.5);
         margin-bottom: 20px;

@@ -14,7 +14,7 @@
 <main class="main">
 
 <div class="container">
-    <div class="alert alert-primary" role="alert" style="background: #456bd8;">
+    <div class="alert alert-primary" role="alert" style="background: #11101c;">
         <h5 class="alert-heading mb-0"><strong>{{$ujian->kelas->nama_kelas}} </strong></h5>
     </div>
     <div class="row justify-content-center">
@@ -22,7 +22,7 @@
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade " id="pills-persoal" role="tabpanel" aria-labelledby="pills-persoal-tab">
                 <div class="card">
-                        <div class="card-header" style=" background: #456bd8;
+                        <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;" >
@@ -61,7 +61,7 @@
                 </div>
                 <div class="tab-pane fade" id="pills-persiswa" role="tabpanel" aria-labelledby="pills-persiswa-tab">
                 <div class="card">
-                        <div class="card-header" style=" background: #456bd8;
+                        <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -86,7 +86,7 @@
                                         <td >{{ $item->siswa->nama_lengkap}}</td>
                                         <td >@if ($item->status == 0) Belum dikerjakan @else Telah dikerjakan @endif</td>
                                         <td class="text-center">
-                                        <a href="{{route('showHasilUjianPersiswa',$item->id)}}"><button type="button" class="btn btn-info btn-sm" style="box-shadow: 3px 2px 5px grey;" ><i class="fa fa-eye"></i> Detail Hasil </button> </a>
+                                        <a href="{{route('showHasilUjianPersiswa',['anggota_kelas_id' => $item->anggota_kelas_id,'ujian_id' =>$item->ujian_id])}}"><button type="button" class="btn btn-info btn-sm" style="box-shadow: 3px 2px 5px grey;" ><i class="fa fa-eye"></i> Detail Hasil </button> </a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -109,7 +109,7 @@
                 <div class="tab-pane fade show active" id="pills-permiskonsepsi" role="tabpanel" aria-labelledby="pills-permiskonsepsi-tab">
                     <div class="container">
                         <div class="card">
-                            <div class="card-header" style=" background: #456bd8;
+                            <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -172,7 +172,7 @@
         </div>
 
         <div class="col-md-2">
-            <div class="alert alert-success text-center" role="alert" style="background: #456bd8;">
+            <div class="alert alert-success text-center" role="alert" style="background: #11101c;">
                 <p class="mb-0"><strong style="color: white;">Hasil</strong> </p> <hr>
                 <ul class="nav flex-column nav-pills mb-3 nav-justified" id="pills-tab" >
                     <li class="nav-item" role="presentation">

@@ -11,7 +11,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12" >
             <div class="card">
-                <div class="card-header" style=" background: #456bd8;
+                <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -25,7 +25,7 @@
                 <div class="card-body">
                 @if (session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>{{ session('success') }}</strong>
+                            <strong style="font-size: 16px;">{{ session('success') }}</strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -33,7 +33,7 @@
                 @endif
                 @if(session('pesan'))
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>{{session('pesan')}}</strong>
+                        <strong style="font-size: 16px;">{{session('pesan')}}</strong>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

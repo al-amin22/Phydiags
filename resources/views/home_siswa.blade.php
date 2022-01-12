@@ -14,7 +14,7 @@ use App\Siswa;
 <main class="main">
     
     <div class="container-fluid"> 
-        <div class="alert alert-success" role="alert" style=" background: #456bd8;
+        <div class="alert alert-success" role="alert" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 12px;" >

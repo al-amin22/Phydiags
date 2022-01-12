@@ -15,7 +15,7 @@
   
     
 <div class="container-fluid"> 
-    <div class="alert alert-success" role="alert" style="background: #456bd8;
+    <div class="alert alert-success" role="alert" style="background: #11101c;
   text-align: center;">
         <center><h4 class="alert-heading"><b style="color: white;">Selamat Datang, {{auth()->user()->name}} !</b></h4>
         <p style="color: white;">Selamat datang di aplikasi PhyDiags (Physics Diagnostic).  <br>

@@ -16,7 +16,7 @@ use App\JawabanTk4;
 <div class="row">
       <div class="col-md-8">
         <div class="card" style=" border-radius: 0px 0px 20px 20px;">
-          <div class="card-header" style=" border-radius: 0px 0px 0px 0px; background: #456bd8; ">Soal Test</div>
+          <div class="card-header" style=" border-radius: 0px 0px 0px 0px; background: #11101c; ">Soal Test</div>
           <div class="card-body " >
             <?php $i=1; ?>
             @foreach($soal_satuan as $item)
@@ -55,31 +55,38 @@ use App\JawabanTk4;
                                                         ->where('soal_tk1_id', $item->soal_tk1->id)->first();
                              ?>
                             @if(!$check_jawaban_tk1)
-                            <input type="radio" class="pilihan" name="pilihan_tk1" value="A"> A . {{$item->soal_tk1->pil_a}}  <br>
+                            <input type="radio" class="pilihan" name="pilihan_tk1" value="A" > A . {{$item->soal_tk1->pil_a}}  <br>
                             <input type="radio" class="pilihan" name="pilihan_tk1" value="B" > B . {{$item->soal_tk1->pil_b}}  <br>
                             <input type="radio" class="pilihan" name="pilihan_tk1" value="C" > C . {{$item->soal_tk1->pil_c}}  <br>
                             <input type="radio" class="pilihan" name="pilihan_tk1" value="D" > D . {{$item->soal_tk1->pil_d}}  <br>
+                           <input type="hidden" class="pilihan" name="pilihan_tk1" id="jawab_tk1_kosong" value="E">  
                             @else
                             <input type="radio" class="pilihan" id="jawab_tk1_a" name="pilihan_tk1" value="A"> A . {{$item->soal_tk1->pil_a}}  <br>
                             <input type="radio" class="pilihan" id="jawab_tk1_b" name="pilihan_tk1" value="B" > B . {{$item->soal_tk1->pil_b}}  <br>
                             <input type="radio" class="pilihan" id="jawab_tk1_c" name="pilihan_tk1" value="C"> C . {{$item->soal_tk1->pil_c}}  <br>
                             <input type="radio" class="pilihan" id="jawab_tk1_d" name="pilihan_tk1" value="D" > D . {{$item->soal_tk1->pil_d}}  <br>
+                            <input type="hidden" class="pilihan" name="pilihan_tk1" id="jawab_tk1_kosong" value="E">  
                               @if($check_jawaban_tk1->jawaban == 'A')
                                 <script>
                                   $('#jawab_tk1_a').prop('checked',true);
+  
                                 </script>
                               @elseif($check_jawaban_tk1->jawaban == 'B')
                                 <script>
                                   $('#jawab_tk1_b').prop('checked',true);
+                                  
                                 </script>
                               @elseif($check_jawaban_tk1->jawaban == 'C')
                                 <script>
                                   $('#jawab_tk1_c').prop('checked',true);
+                                  
                                 </script>
-                              @else
-                                <script>
-                                  $('#jawab_tk1_d').prop('checked',true);
-                                </script>
+                              @else                              
+                              <script>
+                                $('#jawab_tk1_d').prop('checked',true);
+                                
+                              </script>
+                              
                               @endif
                             @endif
                           </td>
@@ -105,17 +112,22 @@ use App\JawabanTk4;
                             @if(!$check_jawaban_tk2)
                             <input type="radio" class="pilihan" name="pilihan_tk2" value="A"> A . {{$item->soal_tk2->pil_a}}  <br>
                             <input type="radio" class="pilihan" name="pilihan_tk2" value="B" > B . {{$item->soal_tk2->pil_b}}  <br>
+                             <input type="hidden" class="pilihan" name="pilihan_tk2" id="jawab_tk2_kosong" value="E">  
                             @else
                             <input type="radio" class="pilihan" id="jawab_tk2_a" name="pilihan_tk2" value="A"> A . {{$item->soal_tk2->pil_a}}  <br>
                             <input type="radio" class="pilihan" id="jawab_tk2_b" name="pilihan_tk2" value="B" > B . {{$item->soal_tk2->pil_b}}  <br>
-                              @if($check_jawaban_tk2->jawaban == 'A')
+                            <input type="hidden" class="pilihan" name="pilihan_tk2" id="jawab_tk2_kosong" value="E"> 
+                            @if ($check_jawaban_tk2->jawaban == 'A')
                                 <script>
                                   $('#jawab_tk2_a').prop('checked',true);
+                                
                                 </script>
                               @else
-                                <script>
+                              <script>
                                   $('#jawab_tk2_b').prop('checked',true);
+                                
                                 </script>
+                              
                               @endif
                             @endif
 
@@ -151,27 +163,34 @@ use App\JawabanTk4;
                             <input type="radio" class="pilihan" name="pilihan_tk3" value="B" > B . {{$item->soal_tk3->pil_b}}  <br>
                             <input type="radio" class="pilihan" name="pilihan_tk3" value="C" > C . {{$item->soal_tk3->pil_c}}  <br>
                             <input type="radio" class="pilihan" name="pilihan_tk3" value="D" > D . {{$item->soal_tk3->pil_d}}  <br>
+                             <input type="hidden" class="pilihan" name="pilihan_tk3" id="jawab_tk3_kosong" value="E">
                             @else
                             <input type="radio" class="pilihan" id="jawab_tk3_a" name="pilihan_tk3" value="A"> A . {{$item->soal_tk3->pil_a}}  <br>
                             <input type="radio" class="pilihan" id="jawab_tk3_b" name="pilihan_tk3" value="B" > B . {{$item->soal_tk3->pil_b}}  <br>
                             <input type="radio" class="pilihan" id="jawab_tk3_c" name="pilihan_tk3" value="C" > C . {{$item->soal_tk3->pil_c}}  <br>
                             <input type="radio" class="pilihan" id="jawab_tk3_d" name="pilihan_tk3" value="D" > D . {{$item->soal_tk3->pil_d}}  <br>
+                             <input type="hidden" class="pilihan" name="pilihan_tk3" id="jawab_tk3_kosong" value="E">
                               @if($check_jawaban_tk3->jawaban == 'A')
                                 <script>
                                   $('#jawab_tk3_a').prop('checked',true);
+                                
                                 </script>
                               @elseif($check_jawaban_tk3->jawaban == 'B')
                                 <script>
                                   $('#jawab_tk3_b').prop('checked',true);
+                                
                                 </script>
                               @elseif($check_jawaban_tk3->jawaban == 'C')
                                 <script>
                                   $('#jawab_tk3_c').prop('checked',true);
+                                
                                 </script>
-                              @else
+                               @else($check_jawaban_tk3->jawaban == 'D')
                                 <script>
-                                  $('#jawab_tk3_d').prop('checked',true);
+                                 $('#jawab_tk3_d').prop('checked',true);
+                               
                                 </script>
+              
                               @endif
                             @endif
                           </td>
@@ -198,17 +217,20 @@ use App\JawabanTk4;
                             @if(!$check_jawaban_tk4)
                             <input type="radio" class="pilihan" name="pilihan_tk4" value="A"> A . {{$item->soal_tk4->pil_a}}  <br>
                             <input type="radio" class="pilihan" name="pilihan_tk4" value="B" > B . {{$item->soal_tk4->pil_b}}  <br>
+                             <input type="hidden" class="pilihan" name="pilihan_tk4" id="jawab_tk4_kosong" value="E">
                             @else
                             <input type="radio" class="pilihan" id="jawab_tk4_a" name="pilihan_tk4" value="A"> A . {{$item->soal_tk4->pil_a}}  <br>
                             <input type="radio" class="pilihan" id="jawab_tk4_b" name="pilihan_tk4" value="B" > B . {{$item->soal_tk4->pil_b}}  <br>
+                             <input type="hidden" class="pilihan" name="pilihan_tk4" id="jawab_tk4_kosong" value="E">
                               @if($check_jawaban_tk4->jawaban == 'A')
                                 <script>
                                   $('#jawab_tk4_a').prop('checked',true);
                                 </script>
                               @else
-                                <script>
+                               <script>
                                   $('#jawab_tk4_b').prop('checked',true);
                                 </script>
+                             
                               @endif
                             @endif
                           </td>
@@ -228,7 +250,7 @@ use App\JawabanTk4;
 
       <div class="col-md-4">
         <div class="card" style=" border-radius: 0px 0px 20px 20px;">
-          <div class="card-header"  style="border-radius: 0px 0px 0px 0px; background: #456bd8;">Navigasi Soal</div>
+          <div class="card-header"  style="border-radius: 0px 0px 0px 0px; background: #11101c;">Navigasi Soal</div>
           <div class="card-body">
             <div class="row ">
               <div class="col-12 text-center " style=" overflow: Auto;">
@@ -249,12 +271,19 @@ use App\JawabanTk4;
 
     <input type="hidden" value="{{ $ujian->id }}" id="ujian_id">
     <input type="hidden" name="peserta_ujian_id" value="{{ $peserta_ujian->id }}" id="peserta_ujian_id">
+    <input type="hidden" name="anggota_kelas_id" value="{{ $peserta_ujian->anggota_kelas_id }}" id="anggota_kelas_id">
 
 <script>
-
+$(document).ready(function() {
 var peserta_ujian_id  = $("#peserta_ujian_id").val();
+var anggota_kelas_id  = $("#anggota_kelas_id").val();
 var ujian_id          = $('#ujian_id').val();
-var soal_satuan_id      = $('#soal_satuan_id').val();
+var soal_satuan_id    = $('#soal_satuan_id').val();
+
+var jawab_tk1_kosong  = document.getElementById('jawab_tk1_kosong').value;
+var jawab_tk2_kosong  = document.getElementById('jawab_tk2_kosong').value;
+var jawab_tk3_kosong  = document.getElementById('jawab_tk3_kosong').value;
+var jawab_tk4_kosong  = document.getElementById('jawab_tk4_kosong').value;
 
 function hasilUjian() {
     $.ajax({
@@ -263,6 +292,8 @@ function hasilUjian() {
         dataType: 'json',
         data: {
             peserta_ujian_id: peserta_ujian_id,
+            anggota_kelas_id: anggota_kelas_id,
+            ujian_id: ujian_id,
             soal_satuan_id: soal_satuan_id,
         },
         error: function(xhr, status, error) {
@@ -276,7 +307,9 @@ function hasilUjian() {
 }
 
 // Pengaturan JS untuk simpan jawaban soal tingkat 1
-$('input[type=radio][name="pilihan_tk1"]').click(function() {
+
+$('input[type=radio][name="pilihan_tk1"]').click(function () {
+    
     var jawab_tk1         = document.querySelector('input[name = "pilihan_tk1"]:checked').value;
     var soal_tk1_id       = $("#soal_tk1_id").val();
     var kunci1             = $("#kunci1").val();
@@ -287,6 +320,7 @@ $('input[type=radio][name="pilihan_tk1"]').click(function() {
         var kode  = 0;
     }
     console.log(jawab_tk1 + " dan " + kunci1);
+     console.log(kode);
     $.ajax({
         url: "{{ url('store/jawaban_tk1') }}",
         type: "GET",
@@ -303,16 +337,66 @@ $('input[type=radio][name="pilihan_tk1"]').click(function() {
           console.log(err.Message);
         },
         success: function(data) {
-					  console.log(data);
+            console.log(data);
             hasilUjian();
-				}
+        }
     });
 });
 
 
-// Pengaturan JS untuk simpan jawaban soal tingkat 2
-$('input[type=radio][name="pilihan_tk2"]').click(function() {
-    var jawab_tk2         = document.querySelector('input[name = "pilihan_tk2"]:checked').value;
+$(document).ready(function(){
+function soal_tk1_run(){
+ 
+    var jawab_tk1 = jawab_tk1_kosong;
+    var soal_tk1_id       = $("#soal_tk1_id").val();
+    var kunci1             = $("#kunci1").val();
+
+    if ( jawab_tk1 == kunci1 ) {
+        var kode  = 1;
+    } else {
+        var kode  = 0;
+    }
+   if(jawab_tk1 != '') {
+    $.ajax({
+        url: "{{ url('store/jawaban_tk1') }}",
+        type: "GET",
+        dataType: 'json',
+        data: {
+            jawab_tk1: jawab_tk1,
+            soal_tk1_id: soal_tk1_id,
+            peserta_ujian_id: peserta_ujian_id,
+            kode: kode,
+            ujian_id: ujian_id
+        },
+        error: function(xhr, status, error) {
+          var err = eval("(" + xhr.responseText + ")");
+          console.log(err.Message);
+        },
+        success: function(data) {
+            hasilUjian();
+        }
+    });
+  }
+  setInterval(function(){
+      soal_tk1_run();
+    }, 1000);
+
+}
+});    
+
+
+
+  
+
+
+//2
+$(document).ready(function() {
+$('input[type=radio][name="pilihan_tk2"]').click(function () {
+    hasBeenClicked = true;
+
+
+if (hasBeenClicked) {
+  var jawab_tk2         = document.querySelector('input[name = "pilihan_tk2"]:checked').value;
     var soal_tk2_id       = $("#soal_tk2_id").val();
     var kunci2             = $("#kunci2").val();
 
@@ -322,7 +406,7 @@ $('input[type=radio][name="pilihan_tk2"]').click(function() {
         var kode  = 0;
     }
     console.log(jawab_tk2 + " dan " + kunci2);
-    console.log(kode);
+     console.log(kode);
     $.ajax({
         url: "{{ url('store/jawaban_tk2') }}",
         type: "GET",
@@ -339,15 +423,59 @@ $('input[type=radio][name="pilihan_tk2"]').click(function() {
           console.log(err.Message);
         },
         success: function(data) {
-					  console.log(data);
+            console.log(data);
             hasilUjian();
-				}
+        }
     });
+} else {
+   $(document).ready(function(e) {
+    soal_tk2_run();
+  });
+}
+
 });
+});
+ 
+function soal_tk2_run(){
+    var jawab_tk2 = jawab_tk2_kosong;
+    var soal_tk2_id       = $("#soal_tk2_id").val();
+    var kunci2             = $("#kunci2").val();
+    if ( jawab_tk2 == kunci2 ) {
+        var kode  = 1;
+    } else {
+        var kode  = 0;
+    }
+    console.log(jawab_tk2 + " dan " + kunci2);
+     console.log(kode);
+    $.ajax({
+        url: "{{ url('store/jawaban_tk2') }}",
+        type: "GET",
+        dataType: 'json',
+        data: {
+            jawab_tk2: jawab_tk2,
+            soal_tk2_id: soal_tk2_id,
+            peserta_ujian_id: peserta_ujian_id,
+            kode: kode,
+            ujian_id: ujian_id
+        },
+        error: function(xhr, status, error) {
+          var err = eval("(" + xhr.responseText + ")");
+          console.log(err.Message);
+        },
+        success: function(data) {
+            console.log(data);
+            hasilUjian();
+        }
+    });
+}
+//3
+
+$(document).ready(function() {
+$('input[type=radio][name="pilihan_tk3"]').click(function () {
+    hasBeenClicked = true;
 
 
-// Pengaturan JS untuk simpan jawaban soal tingkat 3
-$('input[type=radio][name="pilihan_tk3"]').click(function() {
+if (hasBeenClicked) {
     var jawab_tk3         = document.querySelector('input[name = "pilihan_tk3"]:checked').value;
     var soal_tk3_id       = $("#soal_tk3_id").val();
     var kunci3             = $("#kunci3").val();
@@ -358,7 +486,7 @@ $('input[type=radio][name="pilihan_tk3"]').click(function() {
         var kode  = 0;
     }
     console.log(jawab_tk3 + " dan " + kunci3);
-    console.log(kode);
+     console.log(kode);
     $.ajax({
         url: "{{ url('store/jawaban_tk3') }}",
         type: "GET",
@@ -375,16 +503,66 @@ $('input[type=radio][name="pilihan_tk3"]').click(function() {
           console.log(err.Message);
         },
         success: function(data) {
-					  console.log(data);
+            console.log(data);
             hasilUjian();
-				}
+        }
     });
+} else {
+       $(document).ready(function(e) {
+    soal_tk3_run();
+  });
+
+}
+
 });
+ });
 
 
-// Pengaturan JS untuk simpan jawaban soal tingkat 4
-$('input[type=radio][name="pilihan_tk4"]').click(function() {
-    var jawab_tk4         = document.querySelector('input[name = "pilihan_tk4"]:checked').value;
+function soal_tk3_run(){
+  
+    var jawab_tk3 = jawab_tk3_kosong;
+    var soal_tk3_id       = $("#soal_tk3_id").val();
+    var kunci3             = $("#kunci3").val();
+
+    if ( jawab_tk3 == kunci3 ) {
+        var kode  = 1;
+    } else {
+        var kode  = 0;
+    }
+    console.log(jawab_tk3 + " dan " + kunci3);
+     console.log(kode);
+    $.ajax({
+        url: "{{ url('store/jawaban_tk3') }}",
+        type: "GET",
+        dataType: 'json',
+        data: {
+            jawab_tk3: jawab_tk3,
+            soal_tk3_id: soal_tk3_id,
+            peserta_ujian_id: peserta_ujian_id,
+            kode: kode,
+            ujian_id: ujian_id
+        },
+        error: function(xhr, status, error) {
+          var err = eval("(" + xhr.responseText + ")");
+          console.log(err.Message);
+        },
+        success: function(data) {
+            console.log(data);
+            hasilUjian();
+        }
+    });
+           
+}
+//4
+
+$(document).ready(function() {
+$('input[type=radio][name="pilihan_tk4"]').click(function () {
+    hasBeenClicked = true;
+
+
+if (hasBeenClicked) {
+
+   var jawab_tk4         = document.querySelector('input[name = "pilihan_tk4"]:checked').value;
     var soal_tk4_id       = $("#soal_tk4_id").val();
     var kunci4             = $("#kunci4").val();
 
@@ -394,7 +572,7 @@ $('input[type=radio][name="pilihan_tk4"]').click(function() {
         var kode  = 0;
     }
     console.log(jawab_tk4 + " dan " + kunci4);
-    console.log(kode);
+     console.log(kode);
     $.ajax({
         url: "{{ url('store/jawaban_tk4') }}",
         type: "GET",
@@ -411,9 +589,57 @@ $('input[type=radio][name="pilihan_tk4"]').click(function() {
           console.log(err.Message);
         },
         success: function(data) {
-					  console.log(data);
+            console.log(data);
             hasilUjian();
-				}
+        }
     });
+ 
+} else {
+  $(document).ready(function(e) {
+    soal_tk4_run();
+  });
+}
+
+});
+});
+
+
+
+function soal_tk4_run(){
+
+    var jawab_tk4 = jawab_tk4_kosong;
+    var soal_tk4_id       = $("#soal_tk4_id").val();
+    var kunci4             = $("#kunci4").val();
+
+    if ( jawab_tk4 == kunci4 ) {
+        var kode  = 1;
+    } else {
+        var kode  = 0;
+    }
+    console.log(jawab_tk4 + " dan " + kunci4);
+     console.log(kode);
+    $.ajax({
+        url: "{{ url('store/jawaban_tk4') }}",
+        type: "GET",
+        dataType: 'json',
+        data: {
+            jawab_tk4: jawab_tk4,
+            soal_tk4_id: soal_tk4_id,
+            peserta_ujian_id: peserta_ujian_id,
+            kode: kode,
+            ujian_id: ujian_id
+        },
+        error: function(xhr, status, error) {
+          var err = eval("(" + xhr.responseText + ")");
+          console.log(err.Message);
+        },
+        success: function(data) {
+            console.log(data);
+            hasilUjian();
+        }
+    }); 
+}
 });
 </script>
+
+

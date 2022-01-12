@@ -100,7 +100,7 @@ face: "Times New Roman";
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background: green;">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #11101c;">
             
 
 
@@ -258,7 +258,7 @@ face: "Times New Roman";
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" style="background: black;">
                         <i class="fa fa-bars"></i>
                     </button>
 
@@ -269,7 +269,7 @@ face: "Times New Roman";
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-primary" type="button" style="background: black;">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
@@ -294,7 +294,7 @@ face: "Times New Roman";
                                             placeholder="Search for..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
+                                            <button class="btn btn-primary" type="button" style="background: black;">
                                                 <i class="fas fa-search fa-sm"></i>
                                             </button>
                                         </div>

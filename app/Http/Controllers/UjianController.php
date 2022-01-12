@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 // use Excel;
-
+use Illuminate\Support\Facades\DB;
 use App\Guru;
 use App\AnggotaKelas;
 use App\Kelas;
@@ -83,7 +83,8 @@ class UjianController extends Controller
     }
     public function showUjian($id){
         $ujian          = Ujian::find($id);
-        $peserta_ujian  = PesertaUjian::where('ujian_id',$id)->get();
+        $peserta_ujian  = PesertaUjian::where('ujian_id',$id)->where('keterangan','=','selesai')->get();
+       
         $paket_soal_id  = Ujian::where('id',$id)->value('paket_soal_id');
         $soal_satuan    = SoalSatuan::where('paket_soal_id', $paket_soal_id)->get();
         $miskonsepsi    = Miskonsepsi::orderBy('id','asc')->distinct()->get();
@@ -149,11 +150,28 @@ class UjianController extends Controller
         ]);
         return redirect()->back()->with('success','Berhasil menghapus ujian');
     }
-    public function showHasilUjianPersiswa($id)
+  
+
+    public function showHasilUjianPersiswa($anggota_kelas_id,$ujian_id)
+    {
+        $anggota_kelas = AnggotaKelas::find($anggota_kelas_id);
+
+     
+        $hasil_ujian        = HasilUjian::where('anggota_kelas_id',$anggota_kelas->id)->where('ujian_id',$ujian_id)->get();
+    
+        $peserta_ujian      = PesertaUjian::where('anggota_kelas_id',$anggota_kelas->id)->where('ujian_id',$ujian_id)->first();
+
+        $perulangan         = PesertaUjian::where('anggota_kelas_id',$anggota_kelas_id)->where('siswa_id',$anggota_kelas->siswa_id)->where('ujian_id',$ujian_id)->get();//getsatu data siswa
+
+        return view('ujian.guru.showHasilUjianPersiswa',compact('anggota_kelas','hasil_ujian','anggota_kelas_id','peserta_ujian','perulangan'));
+    }
+    public function showHasilUjianPerTest($id)
     {
         $peserta_ujian = PesertaUjian::find($id);
         $hasil_ujian = HasilUjian::where('peserta_ujian_id',$id)->paginate(10);
-        return view('ujian.guru.showHasilUjianPersiswa',compact('hasil_ujian','peserta_ujian'));
+        
+        return view('ujian.guru.showHasilUjianPerTest',compact('hasil_ujian','peserta_ujian'));
+
     }
     public function showHasilUjianPersoal($ujian_id,$id,$nomor)
     {
@@ -164,8 +182,9 @@ class UjianController extends Controller
         $ujian = Ujian::find($ujian_id);
         $hasil_ujian = HasilUjian::join('peserta_ujian',function ($join){
             $join->on('hasil_ujian.peserta_ujian_id','=', 'peserta_ujian.id');
-        })->where('peserta_ujian.ujian_id','=',$ujian_id)->where('soal_satuan_id','=',$id)->get();
+        })->where('peserta_ujian.ujian_id','=',$ujian_id)->where('soal_satuan_id','=',$id)->where('peserta_ujian.keterangan','=','selesai')->get();
 
+       
         $sc  =  $hasil_ujian->where('hasil','SC')->count();
         $fp  =  $hasil_ujian->where('hasil','FP')->count();
         $lk  =  $hasil_ujian->where('hasil','LK')->count();
@@ -184,12 +203,13 @@ class UjianController extends Controller
 
     }
 
+
     public function detailMiskonsepsi($id,$miskonsepsi_id)
     {
         $ujian_id = $id;
         $hasil_ujian = HasilUjian::join('peserta_ujian',function ($join){
             $join->on('hasil_ujian.peserta_ujian_id','=', 'peserta_ujian.id');
-        })->where('peserta_ujian.ujian_id','=',$id)->where('miskonsepsi_id',$miskonsepsi_id)->get();
+        })->where('peserta_ujian.ujian_id','=',$id)->where('miskonsepsi_id',$miskonsepsi_id)->where('peserta_ujian.keterangan','=','selesai')->get();
         $miskonsepsi = Miskonsepsi::find($miskonsepsi_id);
         return view('ujian.guru.showMiskonsepsi',compact(['hasil_ujian','miskonsepsi','ujian_id']));
     }
@@ -226,7 +246,6 @@ class UjianController extends Controller
             return redirect()->route('profilSiswa')->with('error','Mohon lengkapi profil anda');
           }
 
-
     }
 
     public function runUjian($id)
@@ -257,19 +276,22 @@ class UjianController extends Controller
         $peserta_ujian          = PesertaUjian::find($id);
         $update_finish_peserta  = [
             'status' => 1,
+            'keterangan' => 'Selesai',
         ];
         PesertaUjian::where('id', $id)->update($update_finish_peserta);
         return redirect()->route('getUjianSiswa')->with('info','Ujian telah diselesaikan, jawaban anda telah tersimpan !');
     }
     public function storeJawabanTk1(Request $request)
     {
+        
         $this->validate($request,[
-            'ujian_id' => 'required',
             'peserta_ujian_id' => 'required',
             'soal_tk1_id' => 'required',
             'jawab_tk1' => 'required',
             'kode' => 'required',
         ]);
+
+
         $check_jawaban = JawabanTk1::where('peserta_ujian_id', $request->peserta_ujian_id)
                                     ->where('soal_tk1_id', $request->soal_tk1_id)->first();
         if (!$check_jawaban) {
@@ -296,7 +318,6 @@ class UjianController extends Controller
     public function storeJawabanTk2(Request $request)
     {
         $this->validate($request,[
-            'ujian_id' => 'required',
             'peserta_ujian_id' => 'required',
             'soal_tk2_id' => 'required',
             'jawab_tk2' => 'required',
@@ -328,7 +349,6 @@ class UjianController extends Controller
     public function storeJawabanTk3(Request $request)
     {
         $this->validate($request,[
-            'ujian_id' => 'required',
             'peserta_ujian_id' => 'required',
             'soal_tk3_id' => 'required',
             'jawab_tk3' => 'required',
@@ -360,7 +380,6 @@ class UjianController extends Controller
     public function storeJawabanTk4(Request $request)
     {
         $this->validate($request,[
-            'ujian_id' => 'required',
             'peserta_ujian_id' => 'required',
             'soal_tk4_id' => 'required',
             'jawab_tk4' => 'required',
@@ -393,6 +412,8 @@ class UjianController extends Controller
     {
         $this->validate($request,[
             'peserta_ujian_id' => 'required',
+            'anggota_kelas_id' => 'required',
+            'ujian_id' => 'required',
             'soal_satuan_id' => 'required',
         ]);
         $soal_satuan = SoalSatuan::where('id',$request->soal_satuan_id)->first();
@@ -550,6 +571,8 @@ class UjianController extends Controller
             
             $posts = HasilUjian::create([
                 'peserta_ujian_id' => $request->peserta_ujian_id,
+                'anggota_kelas_id' => $request->anggota_kelas_id,
+                'ujian_id' => $request->ujian_id,
                 'soal_satuan_id' => $request->soal_satuan_id,
                 'jawaban_tk1_id' => $jawaban_tk1_id,
                 'jawaban_tk2_id' => $jawaban_tk2_id,
@@ -560,9 +583,12 @@ class UjianController extends Controller
                 'miskonsepsi_id' => $miskonsepsi_id
             ]);
 
+
         } elseif ($check_hasil) {
             $update_hasil_ujian = [
                 'peserta_ujian_id' => $request->peserta_ujian_id,
+                'anggota_kelas_id' => $request->anggota_kelas_id,
+                'ujian_id' => $request->ujian_id,
                 'soal_satuan_id' => $request->soal_satuan_id,
                 'jawaban_tk1_id' => $jawaban_tk1_id,
                 'jawaban_tk2_id' => $jawaban_tk2_id,
@@ -578,14 +604,34 @@ class UjianController extends Controller
         return response()->json($posts);
     }
 
-     public function UpdateUjianSiswa($id)
-    {
+    //  public function UpdateUjianSiswa($id)
+    // {
 
+    //     $HasilUjian          = HasilUjian::find($id);
+    //     $update_ujian_peserta  = [
+    //         'status' => 0,
+    //     ];
+    //     PesertaUjian::where('id', $HasilUjian->peserta_ujian_id)->update($update_ujian_peserta);
+    //     return redirect()->route('getUjianSiswa')->with('info','Silahkan Kerjakan Kembali Ujian !');
+    // }
+    public function UjianUlangSiswa($id)
+    {
         $HasilUjian          = HasilUjian::find($id);
+        $data_peserta_ujian       = PesertaUjian::where('id',$HasilUjian->peserta_ujian_id)->first();
+        $peserta_ujian = new PesertaUjian;
+        $peserta_ujian->anggota_kelas_id =   $data_peserta_ujian->anggota_kelas_id;
+        $peserta_ujian->siswa_id =   $data_peserta_ujian->siswa_id;
+        $peserta_ujian->ujian_id =   $data_peserta_ujian->ujian_id;
+        $peserta_ujian->status = 0;
+        $peserta_ujian->keterangan = '';
+        $peserta_ujian->isdelete =  false;
+        $peserta_ujian->save();
+
         $update_ujian_peserta  = [
-            'status' => 0,
+            'keterangan' => 'Remidi',
         ];
         PesertaUjian::where('id', $HasilUjian->peserta_ujian_id)->update($update_ujian_peserta);
+
         return redirect()->route('getUjianSiswa')->with('info','Silahkan Kerjakan Kembali Ujian !');
     }
 }

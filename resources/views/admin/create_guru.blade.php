@@ -12,7 +12,7 @@
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="card">
-                <div class="card-header" style=" background: #456bd8;
+                <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">Tambah Dosen</div>
@@ -33,7 +33,7 @@
                         <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                     </div>
               
-                    <button type="submit" class="btn btn-primary" style="background: #456bd8;">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="background: #11101c;">Submit</button>
                     </form>
                 </div>
             </div>    

@@ -8,7 +8,7 @@
 <main class="main">
 
     <div class="container-fluid">
-    <div class="alert alert-success pb-1 pt-2" role="alert" style=" background: #456bd8;;
+    <div class="alert alert-success pb-1 pt-2" role="alert" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -20,7 +20,7 @@
             @foreach ($kelas as $item)
             <div class="col-md-4">
             <div class="card mb-3 ">
-                <div class="card-header" style=" background: #456bd8;
+                <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 12px;">
@@ -51,7 +51,7 @@
         </div>
     @else
     <div class="col-md-12">
-        <div class="alert alert-warning" role="alert">
+        <div class="alert alert-warning" role="alert" style="background: #11101c;">
             Belum ada kelas yang dibuat
         </div>
     </div>

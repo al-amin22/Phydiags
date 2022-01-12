@@ -11,7 +11,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <div class="card pt-3 pl-5 pr-5 pb-3 head_exam" style="background: #456bd8;" >
+        <div class="card pt-3 pl-5 pr-5 pb-3 head_exam" style="background: #11101c;" >
           <div class="text-center"> <h4 style="color:white;"> <strong \
           
           >{{ $ujian->nama_ujian }}</strong></h4> </div>

@@ -11,7 +11,7 @@
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="card">
-            <div class="card-header" style="background: #456bd8;
+            <div class="card-header" style="background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="card-footer justify-content-center " style="border-radius: 0px 0px 20px 20px ">
-                <button type="submit" onclick="alert()" class="btn btn-info" style="width:100px; box-shadow: 3px 2px 5px grey; background: #456bd8;">Simpan</button> 
+                <button type="submit" onclick="alert()" class="btn btn-info" style="width:100px; box-shadow: 3px 2px 5px grey; background: #11101c;">Simpan</button> 
             </div>
             </form>
         </div>

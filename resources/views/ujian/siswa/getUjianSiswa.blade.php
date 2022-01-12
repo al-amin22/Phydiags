@@ -14,7 +14,7 @@
         @foreach ($ujian_saya as $item)
            <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header" style=" background: #456bd8;
+                    <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 12px;">{{$item->ujian->nama_ujian}}</div>
@@ -29,7 +29,7 @@
         @endforeach
     @else
     <div class="col-md-12">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="background: #456bd8;">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="background: #11101c;">
             <strong style="color: white;"> Tidak ada test yang harus dikerjakan !</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

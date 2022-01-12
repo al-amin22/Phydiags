@@ -11,14 +11,14 @@
         <div class="col-md-9">
             @if(session('pesan'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>{{session('pesan')}}</strong>
+                    <strong style="font-size: 16px;">{{session('pesan')}}</strong>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
             @endif
             <div class="card">
-                <div class="card-header  pt-3 pb-2 text-center" style=" background: #456bd8;
+                <div class="card-header  pt-3 pb-2 text-center" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">

@@ -10,7 +10,7 @@
 
     <div class="container-fluid">
 
-        <div class="alert alert-success " role="alert" style=" background: #456bd8;
+        <div class="alert alert-success " role="alert" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 12px;">
@@ -34,8 +34,8 @@
             </div>
         </div>
         @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert" style="background: #456bd8;">
-                <strong>{{session('success')}}</strong>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" style="background: #11101c;">
+                <strong style="font-size: 16px;">{{session('success')}}</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card"  style="box-shadow: 2px 2px 10px rgba(48, 10, 64, 0.5);" >
-                    <div class="card-header" style=" background: #456bd8;
+                    <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 12px;">Daftar Mahasiswa</div>
@@ -79,7 +79,7 @@
                         </table>
                         @else
                         <div class="col-md-12">
-                            <div class="alert alert-warning" role="alert">
+                            <div class="alert alert-warning" role="alert" style="background: #11101c;">
                                 Belum ada Mahasiswa yang mengikuti kelas ini
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
 
-                <a href="{{route('getKelas')}}"><button class="btn btn-warning" style="box-shadow: 3px 2px 5px grey; background: #456bd8;"><i class="fa fa-reply mr-1" ></i> Kembali</button></a>      
+                <a href="{{route('getKelas')}}"><button class="btn btn-warning" style="box-shadow: 3px 2px 5px grey; background: #11101c;"><i class="fa fa-reply mr-1" ></i> Kembali</button></a>      
             </div>
             <div class="col-md-8">
                 <div class="card pt-3 pr-3 pl-3 "  style="box-shadow: 2px 2px 10px rgba(48, 10, 64, 0.5);" >

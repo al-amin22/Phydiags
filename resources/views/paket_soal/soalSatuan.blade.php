@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="alert alert-success" style="background: #456bd8; color: white;"> <h5><strong style="color: white;">Paket Soal : {{$paket_soal->nama_paket_soal}}</strong></h5> </div>
+            <div class="alert alert-success" style="background: #11101c; color: white;"> <h5><strong style="color: white;">Paket Soal : {{$paket_soal->nama_paket_soal}}</strong></h5> </div>
         </div>
     </div>
     <div class="row justify-content-center mb-3">
@@ -19,7 +19,7 @@
             <a href="{{route('getPaketSoal')}}"><button class="btn btn-warning mr-3" style="box-shadow: 3px 2px 5px grey;"><i class="fa fa-reply mr-1" ></i> Kembali</button></a>
             <button type="submit" class="btn btn-info" data-toggle="modal" data-target=".create_soal_satuan"
                     id="create"
-                    data-paket_soal_id = "{{ $paket_soal->id }}" style="box-shadow: 3px 2px 5px grey; background: #456bd8;"> <i class="fa fa-plus mr-2"></i>  Tambah Soal
+                    data-paket_soal_id = "{{ $paket_soal->id }}" style="box-shadow: 3px 2px 5px grey; background: #11101c;"> <i class="fa fa-plus mr-2"></i>  Tambah Soal
             </button>
         </div>
     </div>
@@ -31,7 +31,7 @@
             <div class="card-body"> 
                 <h6><strong>Soal No. <?php echo $i; $i++ ; ?></strong></h6> <hr class="mt-1 mb-1">
                 <p class="mb-2">{{$item->indikator}}</p> 
-                <div class="text-right"> <a href="{{route('soalTingkat', $item->id)}}"><button class="btn btn-info" style="background: #456bd8;"><i class="fa fa-eye"></i> Lihat Soal</button></a></div>
+                <div class="text-right"> <a href="{{route('soalTingkat', $item->id)}}"><button class="btn btn-info" style="background: #11101c;"><i class="fa fa-eye"></i> Lihat Soal</button></a></div>
                
             </div>
            </div>

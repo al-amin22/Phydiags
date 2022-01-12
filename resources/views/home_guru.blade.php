@@ -14,11 +14,11 @@
 
 
 <div class="container-fluid">
-    <div class="alert alert-success" role="alert" style="background: #456bd8;">
+    <div class="alert alert-success" role="alert" style="background: #11101c;">
         <center><h4 class="alert-heading" style="color: white;"><b>Selamat Datang, {{auth()->user()->name}} !</b></h4> </center>
         <center><p style="color: white;">Selamat datang di aplikasi PhyDiags (Physics Diagnostic). </center>  <br>
         <center><p style="color: white;">
-        PhyDiags merupakan aplikasi yang digunakan untuk mengembangkan tes diagnostik dalam bentuk four-tier yang berguna dalam mengidentifikasi profil konsepsi mahasiswa pada materi Usaha dan Energi. Mengidentifikasi profil konsepsi mahasiswa tentang Usaha dan Energi penting dilakukan untuk mendukung Mahasiswa dalam proses pembelajaran di dalam kelas, agar nantinya Dosen dapat memberikan treatment dalam proses pembelajaran kepada Mahasiswa yang berbeda dengan hasil yang telah di peroleh dari website ini.
+        PhyDiags merupakan aplikasi yang digunakan untuk mengembangkan tes diagnostik dalam bentuk four-tier yang berguna dalam mengidentifikasi profil konsepsi mahasiswa. Mengidentifikasi profil konsepsi mahasiswa, penting dilakukan untuk mendukung Mahasiswa dalam proses pembelajaran di dalam kelas, agar nantinya Dosen dapat memberikan treatment dalam proses pembelajaran kepada Mahasiswa yang berbeda dengan hasil yang telah di peroleh dari website ini.
         </p></center>
          <hr>
 
@@ -44,10 +44,10 @@
                         <div class="card mb-3 widget-content bg-heavy-rain">
                             <div class="widget-content-wrapper">
                                 <div class="widget-content-left">
-                                    <div class="widget-heading">Jumlah Kelas</div>
-                                    <div class="widget-subheading">Jumlah kelas yang di ajar</div>
+                                    <div class="widget-heading" style="color: black;">Jumlah Kelas</div>
+                                    <div class="widget-subheading" style="color: black;">Jumlah kelas yang di ajar</div>
                                 </div>
-                                <div class="widget-content-right">
+                                <div class="widget-content-right" style="color: black;">
                                 @if(auth()->user()->guru != null)
                                     <div class="widget-numbers "><span>{{auth()->user()->guru->jumlah_kelas()}}</span></div>
                                 @else
@@ -82,14 +82,14 @@
                         <div class="card mb-3 widget-content bg-heavy-rain ">
                             <div class="widget-content-wrapper ">
                                 <div class="widget-content-left">
-                                    <div class="widget-heading">Jumlah Test</div>
-                                    <div class="widget-subheading">Total test yang di buat</div>
+                                    <div class="widget-heading" style="color: black;">Jumlah Test</div>
+                                    <div class="widget-subheading" style="color: black;">Total test yang di buat</div>
                                 </div>
                                 <div class="widget-content-right">
                                 @if(auth()->user()->guru != null)
-                                    <div class="widget-numbers "><span>{{auth()->user()->guru->jumlah_ujian()}}</span></div>
+                                    <div class="widget-numbers " style="color: black;"><span>{{auth()->user()->guru->jumlah_ujian()}}</span></div>
                                 @else
-                                    <div class="widget-numbers "><span>0</span></div>
+                                    <div class="widget-numbers " style="color: black;"><span>0</span></div>
                                 @endif
                                 </div>
                             </div>

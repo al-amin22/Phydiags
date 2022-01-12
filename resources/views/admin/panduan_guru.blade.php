@@ -16,7 +16,7 @@
   
   padding: 30px;
   text-align: center;
-  background: #014362;
+  background: #11101c;
   color: white;
   font-size: 30px;">Panduan Dosen</div>
                 <div class="card-body">

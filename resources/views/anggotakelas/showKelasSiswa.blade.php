@@ -8,7 +8,7 @@
 <main class="main" >
     <div class="container-fluid" >
         @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert" style="background: #456bd8;">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="background: #11101c;">
             <strong style="color: white;" >{{ session('success') }}</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -27,14 +27,14 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card " >
-                    <div class="card-header" style=" background: #456bd8;
+                    <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">Daftar Siswa</div>
                     <div class="card-body">
                         @if($anggotakelas->count() != 0)
                         <table class="table table-striped table-sm">
-                            <thead class="thead-dark thead text-center" style="background-color:#393A3C; color:white; font-weight:bold">
+                            <thead class="thead-dark thead text-center" style="background-color:#11101c; color:white; font-weight:bold">
                                 <tr>
                                     <td width="40px">No</td>
                                     <td>Nama Siswa</td>
@@ -80,26 +80,27 @@
                             <div class="row table-inside">
                             @if($hasil_ujian->count() != 0)
                                 <table class="table table-striped table-sm" >
-                                    <thead class="thead text-center" style="background-color:#393A3C; color:white; font-weight:bold">
+                                    <thead class="thead text-center" style="background-color:#11101c; color:white; font-weight:bold">
                                         <tr>
                                             <th scope="col" style="width:50px">No</th>
                                             <th scope="col" >Nama Ujian </th>
-                                            <th scope="col" >Deskrispsi Ujian </th>
+                                            <th scope="col" >Keterangan </th>
                                             <th scope="col" >Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php $i=1; ?>
+                                        <?php $j=1; ?>
                                         @foreach ($hasil_ujian as $item)
                                         <tr>
                                             <td scope="row" class="text-center"><?php echo $i; $i++; ?></td>
-                                            <?php $i++; ?>
                                             <td >{{$item->ujian->nama_ujian}}</td>
-                                            <td class="text-center"> {{$item->ujian->deskripsi}} </td>
+                                            <td scope="row" class="text-center">Ujian Ke- <?php echo $j; $j++; ?></td>
+                                           
                                             
                                             <td class="text-center">
                                                 <a href="{{route('hasilUjian',$item->id)}}">
-                                                    <button type="button" class="btn btn-info btn-sm">
+                                                    <button type="button" class="btn btn-info btn-sm" style="background: #11101c;">
                                                         <i class="fa fa-eye fa-sm"></i> Detail Hasil
                                                     </button>
                                                 </a>
@@ -111,8 +112,8 @@
                                 </table>
                                 @else
                                     <div class="col-md-12">
-                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                        <strong > Belum ada hasil ujian </strong>
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="background: #11101c;," >
+                                        <strong style="font-size: 16px;"> Belum ada hasil ujian </strong>
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>

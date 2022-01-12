@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card"  style="box-shadow: 5px 5px 10px rgba(48, 10, 64, 0.5);">
-                            <div class="card-header  pt-3 pb-2 text-center" style=" background: #456bd8;
+                            <div class="card-header  pt-3 pb-2 text-center" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -41,7 +41,7 @@
 
                     <div class="col-md-8">
                         <div class="card"  style="box-shadow: 5px 5px 10px rgba(48, 10, 64, 0.5);">
-                            <div class="card-header  pt-3 pb-2  text-center"  style=" background: #456bd8;
+                            <div class="card-header  pt-3 pb-2  text-center"  style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -108,7 +108,7 @@
                                                 <option value="Perempuan">Perempuan</option>
                                             </select>
                                         </div>                  
-                                    <div class="text-right"> <button type="submit" onclick="alertUpdate()" class="btn btn-info" style="box-shadow: 3px 2px 5px grey; background: #456bd8;"> Update Profil </button> </div>
+                                    <div class="text-right"> <button type="submit" onclick="alertUpdate()" class="btn btn-info" style="box-shadow: 3px 2px 5px grey; background: #11101c;"> Update Profil </button> </div>
 
                                 </div>
 

@@ -18,7 +18,7 @@
             <div class="col-md-12" >
 
                 <div class="card"  >
-                    <div class="card-header" style=" background: #456bd8;
+                    <div class="card-header" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -31,7 +31,7 @@
 
                     <div class="card-body pb-0" > 
                         <div class="row">
-                            <div class="col-md-8" style=" background: #456bd8;
+                            <div class="col-md-8" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -59,7 +59,7 @@
                                     <input type="kode_kelas" id="kode_kelas" name="kode_kelas" required
                                     placeholder="Masukkan Kode Kelas" class="form-control" autocomplete="off"  style="box-shadow: 3px 2px 5px grey;">
                                         <div class="input-group-append">
-                                            <button type="submit"  onclick="alert()" class="btn btn-info"  style="box-shadow: 3px 2px 5px grey; background: #456bd8;"><i class="fa fa-plus mr-2"></i> <strong> Gabung</strong></button>
+                                            <button type="submit"  onclick="alert()" class="btn btn-info"  style="box-shadow: 3px 2px 5px grey; background: #11101c;"><i class="fa fa-plus mr-2"></i> <strong style=""> Gabung</strong></button>
                                         </div>
                                     </div>
                                 </form>
@@ -70,14 +70,14 @@
                         <div class="row">
                             @foreach ($anggotaKelas as $item)
                                 <div class="col-md-4">
-                                    <div class="alert alert-success mb-3"style=" background: #456bd8;
+                                    <div class="alert alert-success mb-3"style=" background: #11101c;
 ;
   color: white;
   font-size: 12px;">
                                         <h5 class="card-title" style="color:white">{{$item->kelas->nama_kelas}}</h5> <hr class="mb-0 mt-0">
                                         <p class="mb-0">{{$item->kelas->deskripsi}}</p>
                                         <p class="mb-2">Pengajar : {{$item->kelas->guru->nama_lengkap}}</p>
-                                        <div class="text-right"><a href="{{route('showKelasSiswa',$item->kelas->id)}}" class="btn btn-info" style="background: #456be9;">Masuk</a></div>
+                                        <div class="text-right"><a href="{{route('showKelasSiswa',$item->kelas->id)}}" class="btn btn-info" style="background: #11101c;">Masuk</a></div>
                                     </div>
                                 </div>
                             @endforeach

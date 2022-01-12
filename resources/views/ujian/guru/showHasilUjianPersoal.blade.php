@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="alert alert-success" role="alert" style="background: #456bd8;">
+            <div class="alert alert-success" role="alert" style="background: #11101c;">
                 <h5 class="alert-heading mb-0"><strong>{{$ujian->kelas->nama_kelas}} </strong></h5>
             </div>
         </div>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-md-7">
-                    <div class="alert alert-success" role="alert" style="background: #456bd8;">
+                    <div class="alert alert-success" role="alert" style="background: #11101c;">
                         <h5 class="alert-heading"><strong>Akumulasi Hasil</strong></h5>
                         <table class="table table-sm table-hover">
                             <tr><td><li>Scientific Conception (SC) </li></td><td>:</td><td> {{$sc}} siswa </td></tr>

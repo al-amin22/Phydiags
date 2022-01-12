@@ -17,7 +17,7 @@
 
         <div class="col-md-8">
             <div class="card mb-3">
-                <div class="card-header pt-3 pb-2 text-center" style=" background: #456bd8;
+                <div class="card-header pt-3 pb-2 text-center" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;">
@@ -84,14 +84,14 @@
                 </div>
 
                 <div class="card-footer justify-content-center" style="border-radius: 0px 0px 20px 20px ">
-                    <a href="{{route('editProfilGuru')}}"><button class="btn btn-info"  style="box-shadow: 3px 2px 5px grey; background: #456bd8;"> Edit Profil </button></a>
+                    <a href="{{route('editProfilGuru')}}"><button class="btn btn-info"  style="box-shadow: 3px 2px 5px grey; background: #11101c;"> Edit Profil </button></a>
                 </div>
 
             </div>
         </div>
         <div class="col-md-4">
             <div class="card" >
-                <div class="card-header pt-3 pb-2 justify-content-center" style=" background: #456bd8;
+                <div class="card-header pt-3 pb-2 justify-content-center" style=" background: #11101c;
   text-align: center;
   color: white;
   font-size: 30px;" >
@@ -217,7 +217,7 @@
                             @endif
                         </div>
 
-                        <div class="text-right" > <button type="submit" onclick="alert()" class="btn btn-info mb-3" style="box-shadow: 3px 2px 5px grey;, background: #456bd8;" >Simpan Profil </button> </div>
+                        <div class="text-right" > <button type="submit" onclick="alert()" class="btn btn-info mb-3" style="box-shadow: 3px 2px 5px grey;, background: #11101c;" >Simpan Profil </button> </div>
                     </div>
                 </div>
             </div>

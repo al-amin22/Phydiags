@@ -16,7 +16,7 @@
   
   padding: 30px;
   text-align: center;
-  background: #456bd8;
+  background: #11101c;
   color: white;
   font-size: 30px;">Tambah Mahasiswa</div>
                 <div class="card-body">
@@ -36,7 +36,7 @@
                         <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                     </div>
               
-                    <button type="submit" class="btn btn-primary" style="background: #456bd8;">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="background: #11101c;">Submit</button>
                     </form>
                 </div>
             </div>    
